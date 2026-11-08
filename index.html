@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UK Tick Tracker</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>UK Tick Tracker</h1>
+    <nav>
+      <a href="#map-area">Map</a>
+      <a href="#species">Species guide</a>
+      <a href="#prevention">Prevention tips</a>
+      <a href="#report">Report a sighting</a>
+    </nav>
+  </header>
+
+  <main>
+    <p id="banner" class="hidden">Could not load the live data, so sample data is shown.</p>
+
+    <!-- Filters -->
+    <section class="box">
+      <h2>Filters</h2>
+      <label for="species-filter">Species</label>
+      <select id="species-filter">
+        <option value="all">Any</option>
+      </select>
+
+      <label for="severity-filter">Severity</label>
+      <select id="severity-filter">
+        <option value="all">Any</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+    </section>
+
+    <!-- Map and side panel -->
+    <div class="layout" id="map-area">
+      <section class="box">
+        <h2>UK tick sightings</h2>
+        <div id="map"></div>
+        <p>Marker colour: green = low, orange = medium, red = high</p>
+      </section>
+
+      <aside>
+        <!-- Details (hidden until a sighting is clicked) -->
+        <section id="details" class="box hidden">
+          <h2>Sighting details</h2>
+          <p>Location: <span id="d-city"></span></p>
+          <p>Species: <span id="d-species"></span></p>
+          <p>Common name: <span id="d-common"></span></p>
+          <p>Date: <span id="d-date"></span></p>
+          <p>Severity: <span id="d-severity"></span></p>
+          <a href="#report" class="button">Report a sighting</a>
+          <a href="#" id="d-directions" class="button" target="_blank">Get directions</a>
+        </section>
+
+        <section class="box">
+          <h2>Results <span id="count"></span></h2>
+          <ul id="list"></ul>
+        </section>
+      </aside>
+    </div>
+
+    <!-- Species guide -->
+    <section id="species" class="box">
+      <h2>Species guide</h2>
+      <h3>Ixodes ricinus (castor bean tick)</h3>
+      <p>The most common tick in the UK and the main carrier of Lyme disease. Found in woodland, moorland, parks and gardens.</p>
+      <h3>Ixodes hexagonus (hedgehog tick)</h3>
+      <p>Often found on hedgehogs, but also feeds on dogs, cats and foxes. Common in gardens.</p>
+      <h3>Dermacentor reticulatus (ornate dog tick)</h3>
+      <p>Has a marbled pattern on its back. Found in parts of western Britain and Essex. Can carry the parasite that causes babesiosis in dogs.</p>
+    </section>
+
+    <!-- Prevention tips -->
+    <section id="prevention" class="box">
+      <h2>Prevention tips</h2>
+      <ul>
+        <li>Wear long trousers and tuck them into your socks.</li>
+        <li>Use a repellent that works on ticks.</li>
+        <li>Stay on paths and avoid long grass.</li>
+        <li>Check yourself, children and pets after being outdoors.</li>
+        <li>Remove a tick with fine tipped tweezers, pulling steadily and close to the skin.</li>
+        <li>See a GP if you get a rash or feel unwell after a tick bite.</li>
+      </ul>
+    </section>
+
+    <!-- Report form -->
+    <section id="report" class="box">
+      <h2>Report a sighting</h2>
+      <form id="report-form">
+        <div id="messages"></div>
+
+        <label for="r-date">Date</label>
+        <input type="date" id="r-date">
+
+        <label for="r-time">Time</label>
+        <input type="time" id="r-time">
+
+        <label for="r-city">City</label>
+        <select id="r-city">
+          <option value="">Choose a city</option>
+        </select>
+
+        <label for="r-species">Species</label>
+        <select id="r-species">
+          <option value="">Choose a species</option>
+          <option>Ixodes ricinus</option>
+          <option>Ixodes hexagonus</option>
+          <option>Dermacentor reticulatus</option>
+        </select>
+
+        <label for="r-severity">Severity</label>
+        <select id="r-severity">
+          <option value="">Choose a level</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+
+        <button type="submit" class="button">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Mohamud Sharif</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
