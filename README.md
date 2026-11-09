@@ -5,6 +5,8 @@
 
 A simple web app that shows tick sightings on a map of the UK. You can filter sightings, click a sighting for details, read about ticks, and report your own sighting.
 
+Video Walkthrough: https://youtu.be/1g73XsKgzEo
+
 ## How to run
 
 1. Install VS Code and the **Live Server** extension.
