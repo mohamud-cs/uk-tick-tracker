@@ -1,19 +1,9 @@
 // UK Tick Tracker
 
-// API endpoint from the Swagger page (check the "Request URL" shown by Try it out)
+// API endpoint
 const API_URL = "https://dev-task.elancoapps.com/data/tick-sightings";
 
-// Used if the API cannot be loaded. Same shape as the API records.
-const sampleSightings = [
-  { id: "s1", date: "2025-08-20", location: "London", species: "Castor bean tick", latinName: "Ixodes ricinus" },
-  { id: "s2", date: "2025-08-25", location: "Manchester", species: "Hedgehog tick", latinName: "Ixodes hexagonus" },
-  { id: "s3", date: "2025-07-30", location: "Edinburgh", species: "Castor bean tick", latinName: "Ixodes ricinus" },
-  { id: "s4", date: "2025-08-10", location: "Bournemouth", species: "Ornate dog tick", latinName: "Dermacentor reticulatus" },
-  { id: "s5", date: "2025-08-28", location: "Birmingham", species: "Castor bean tick", latinName: "Ixodes ricinus" },
-  { id: "s6", date: "2025-08-29", location: "London", species: "Castor bean tick", latinName: "Ixodes ricinus" }
-];
-
-// The API gives a city name, so these are the map positions of each city
+// These are the map positions of each city from the API
 const cityPositions = {
   Aberdeen: [57.1497, -2.0943],
   Belfast: [54.5973, -5.9301],
